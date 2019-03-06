@@ -1,18 +1,9 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express'); //调用express
+var router = express.Router();  //生成express的Router方法的一个实例
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', {
-    user: function () { //user将读取session的属性，然后给予不同的返回值
-      if (req.session.user)
-        return req.session.user;
-      else
-        return null;
-    }
-  });
+//处理函数
+router.get('/', function (req, res, next) {  //捕获根url
+  res.render('index');
 });
-router.get('/home', function(req, res, next) {
-  res.render('home', { title: 'home' });
-});
+
 module.exports = router;

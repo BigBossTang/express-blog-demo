@@ -21,6 +21,14 @@ internation.prototype.languagePacks = {
       reg: "注册",
       language: "切换语言",
       foot: "作者：王冬　　　QQ:20004604"
+    },
+    message: {
+      reg_success: "注册成功！",
+      reg_fail: "注册失败！",
+      login_success: "登录成功！",
+      login_fail: "登录失败",
+      errorName: "用户名不存在",
+      errorPW: "密码错误！"
     }
   },
   eng: {
@@ -41,6 +49,14 @@ internation.prototype.languagePacks = {
       reg: "Reg",
       language: "Language",
       foot: "I'm WangDong, you can contact me with QQ:20004604"
+    },
+    message: {
+      reg_success: "Reg Success！",
+      reg_fail: "Reg Failed！",
+      login_success: "Login Success！",
+      login_fail: "Login Failed!",
+      errorName: "The username is not exists.",
+      errorPW: "Error Password!"
     }
   }
 }

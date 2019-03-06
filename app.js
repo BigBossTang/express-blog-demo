@@ -8,8 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var reg = require('./routes/reg');
 var login = require('./routes/login');
-
 var lan = require('./routes/language');
+var logout = require('./routes/logout');
 
 var app = express();
 
@@ -41,6 +41,7 @@ app.use('/users', usersRouter);
 app.use('/reg', reg);    //注册的，reg.js来处理
 app.use('/login', login);  //登录的，login来处理
 app.use('/language', lan);  //切换语言的
+app.use('/logout', logout);  //登出
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
