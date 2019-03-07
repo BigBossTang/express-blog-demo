@@ -10,6 +10,7 @@ var reg = require('./routes/reg');
 var login = require('./routes/login');
 var lan = require('./routes/language');
 var logout = require('./routes/logout');
+var postBlog = require('./routes/post');
 
 var app = express();
 
@@ -36,12 +37,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//路由的处理
+app.use('/login', checkNotLogin);
+app.use('/reg', checkNotLogin);
+
+//必须在已登录情况下才能访问
+app.use('/logout', checkLogin);
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/reg', reg);    //注册的，reg.js来处理
 app.use('/login', login);  //登录的，login来处理
 app.use('/language', lan);  //切换语言的
 app.use('/logout', logout);  //登出
+app.use('/post', postBlog);
+app.use('/loadblog', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,5 +68,21 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+function checkNotLogin(req, res, next) {
+  if (req.session.user) {
+    req.session.err = "已登录，请不要重复登录";
+    return res.redirect('/');
+  }
+  next();
+}
+//已登录检测（未登录情况下执行）
+function checkLogin(req, res, next) {
+  if (!req.session.user) {
+    req.session.err = "你还没有登录，请登录";
+    return res.redirect('/login');
+  }
+  next();
+}
+
 app.listen(80);
 module.exports = app;

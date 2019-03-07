@@ -13,14 +13,14 @@ internation.prototype.languagePacks = {
       emptyInput: "清空"
     },
     layout: {
-      title: "MyBlog By qq20004604",
+      title: "MyBlog",
       topTitle: "MyBlog",
       indexButton: "首页",
       logout: "登出",
       login: "登入",
       reg: "注册",
       language: "切换语言",
-      foot: "作者：王冬　　　QQ:20004604"
+      foot: "https://github.com/BigBossTang/express-blog-demo"
     },
     message: {
       reg_success: "注册成功！",
@@ -41,14 +41,14 @@ internation.prototype.languagePacks = {
       emptyInput: "Clear"
     },
     layout: {
-      title: "MyBlog By qq20004604",
+      title: "MyBlog",
       topTitle: "MyBlog",
       indexButton: "Index",
       logout: "Logout",
       login: "Login",
       reg: "Reg",
       language: "Language",
-      foot: "I'm WangDong, you can contact me with QQ:20004604"
+      foot: "https://github.com/BigBossTang/express-blog-demo"
     },
     message: {
       reg_success: "Reg Success！",

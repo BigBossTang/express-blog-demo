@@ -8,6 +8,7 @@ html
     script(type="text/javascript",src='javascripts/jq.js')
     script(type="text/javascript",src='javascripts/bootstrap.min.js')
     script(type="text/javascript",src='javascripts/blog.js')
+    script(type="text/javascript",src='javascripts/index.js')
   body
     div.navbar.navbar-fixed-top
       div.navbar-inner
@@ -36,4 +37,5 @@ html
       block content
       hr
     fotter
-      p   #{layout.foot}
+      p
+        a(href="#{layout.foot}",target="_blank") #{layout.foot}
